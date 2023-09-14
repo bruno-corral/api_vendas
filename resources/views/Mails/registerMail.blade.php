@@ -9,6 +9,6 @@
 </head>
     <div>
         <h1>Este e-mail é para mostrar as vendas do dia</h1>
-        <h2>Total das vendas do dia: {{$vendasTotais}}</h2>
+        <h2>Total das vendas do dia: R$ {{$vendasTotais}}</h2>
     </div>
 </html>
