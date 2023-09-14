@@ -1,66 +1,66 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sobre a API
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+- API de vendas para vendedores realizada em Laravel.
+- Com esta API é possível fazer o Cadastro de Vendedores tendo a saída de dados do vendedor seu id, nome e e-mail.
+- Buscar todos os vendedores cadastrados tendo como a saída de dados dos vendedores seu id, nome, e-mail e comissao.
+- É possível fazer o Cadastro de Vendas tendo a saída de dados da venda o id, valor_venda e vendedor_id.
+- Buscar todas as vendas cadastradas tendo como saída de dados de cada venda seu id, valor_venda, data_venda e vendedor_id.
+- Buscar todas as vendas de um vendedor como saída de dados o vendedor_id, nome, e-mail, comissao, e todas as vendas com seu id, valor_venda, data_venda, vendedor_id.
 
-## About Laravel
+## Endpoints da API
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- No endpoint por POST (http://127.0.0.1:8000/api/vendedores/add) e passando no body da requisição nome e e-mail terá o cadastro do vendedor.
+- No endpoint por GET (http://127.0.0.1:8000/api/vendedores/all) terá a busca de todos os vendedores.
+- No endpoint por POST (http://127.0.0.1:8000/api/venda/add) e passando no body da requisição o valor_venda e vendedor_id terá o cadastro da venda.
+- No endpoint por GET (http://127.0.0.1:8000/api/venda/all) terá a busca de todas as vendas.
+- No endpoint por GET (http://127.0.0.1:8000/api/vendedores/{id}) e passando o id desejado após vendedores/ terá a busca de todas as vendas de um vendedor.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Endpoint Web para envio de E-mail
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- No endpoint (http://127.0.0.1:8000/envio-email) sendo passado na url do navegador irá ser enviado a Job para após ser executada para o envio de e-mail.
 
-## Learning Laravel
+## Tecnologias Utilizadas no projeto Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- PHP 8.2.4
+- Laravel 10.14.1
+- Migrations
+- Eloquent ORM
+- Queues
+- Jobs
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Banco de dados utilizado
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- MySQL
 
-## Laravel Sponsors
+## Programa utilizado para testes da API
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- Insomnia
 
-### Premium Partners
+## Recebimento de E-mail
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- Mailtrap (https://mailtrap.io/)
 
-## Contributing
+## Pré-requisitos antes de utilizar o sistema
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Crie o banco de dados que se chama api_venda no seu gerenciador de banco de dados;
+- Abra o terminal do computador, vá até a pasta do projeto e execute o comando: php artisan migrate, para assim criar todas as tabelas correspondentes as migrates criadas;
+- Para testar as respostas das requisições foi utilizado a ferramenta Insomnia, podendo ser utilizado o Postman ou qualquer outra ferramenta que consiga fazer chamadas de requisições Rest;
+- Crie as requisições no Insomnia (por exemplo) levando como base os endpoints da sessão acima "Endpoints da API" para testar as chamadas das requisições.
 
-## Code of Conduct
+## Execução do Projeto
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Execute no terminal do vscode o comando: php artisan serve , para executar o projeto Laravel.
 
-## Security Vulnerabilities
+## Execução do banco de dados
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Execute o MySql no Xampp ou execute o MySql no terminal caso tenha o MySql instalado na máquina.
 
-## License
+## Execução para o envio do e-mail
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Para envio de e-mail coloque a url http://127.0.0.1:8000/envio-email no navegador e de enter, com o comando php artisan serve sendo executado no terminal do vscode;
+- Após o último passo, abra outro terminal no vscode e execute o comando: php atisan queue:work , para que assim o Worker do Laravel fique escutando a fila/queue, para assim a Job com o envio de e-mail seja executada;
+- Entre no Mailtrap e veja e-mail de teste chegar na caixa de e-mails.
+
+## Observação sobre envio do e-mail ao Mailtrap
+
+- Foi escolhido um e-mail para uma conta padrão, para visualização da imagem do e-mail no Mailtrap olhar no final da documentação na sessão Soma das Vendas enviada no E-mail.
